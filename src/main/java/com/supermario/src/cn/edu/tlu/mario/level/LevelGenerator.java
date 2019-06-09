@@ -1,8 +1,9 @@
 package com.supermario.src.cn.edu.tlu.mario.level;
 
+import com.supermario.src.cn.edu.tlu.mario.sprites.Enemy;
+
 import java.util.Random;
 
-import cn.edu.tlu.mario.sprites.Enemy;
 
 /**
  * 关卡难度 生成

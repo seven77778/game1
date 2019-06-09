@@ -32,32 +32,32 @@ public class MineClient extends JFrame {
      *
      */
     private static final long serialVersionUID = 1L;
-    //屏幕宽度
+    //??????
     private int screenWidth;
-    //屏幕高度
+    //??????
     private int screenHeight;
-    //图片宽度
+    //?????
     private int imgWidth = 20;
-    //图片高度
+    //?????
     private int imgHeight = 20;
-    //地图的行数
+    //?????????
     private int rowNum = 0;
-    //地图的列数
+    //?????????
     private int colNum = 0;
-    //地雷的总数
+    //?????????
     private int mineNum=99;
-    //计时器
+    //?????
     private int timer=0;
-    //游戏时间
+    //??????
     private int time=0;
-    //未扫雷的个数
+    //δ???????
     private int restMine;
-    //不是雷的个数
+    //??????????
     private int notMine;
     private MyPanel myPanel;
-    //当前游戏状态
+    //????????
     private String gameState = "start";
-    //第一次点击
+    //????ε??
     private boolean firstClick = true;
     private JMenuBar menuBar;
     private JMenu menu;
@@ -67,7 +67,7 @@ public class MineClient extends JFrame {
     private JMenuItem restart;
     private Toolkit tk=Toolkit.getDefaultToolkit();
     private Image icon=tk.getImage("Image/icon.jpg");
-    //地图集合
+    //???????
     private ArrayList<Bomb> bombList = new ArrayList<Bomb>();
 
 
@@ -75,9 +75,9 @@ public class MineClient extends JFrame {
         this.screenHeight=screenHeight;
         this.screenWidth=screenWidth;
         this.mineNum=mineNum;
-        //初始化菜单栏
+        //??????????
         initMenu();
-        setTitle("扫雷");
+        setTitle("???");
         setIconImage(icon);
         setSize(screenWidth	, screenHeight);
         setLocationRelativeTo(null);
@@ -87,20 +87,20 @@ public class MineClient extends JFrame {
         myPanel = new MyPanel();
         myPanel.setBackground(Color.BLACK);
         add(myPanel);
-        //鼠标事件
+        //??????
         myPanel.addMouseListener(new MyMouseListener(this));
         new updateThread().start();
     }
     /*
-     * 初始化菜单栏
+     * ??????????
      */
     private void initMenu() {
-        menu=new JMenu("参数设置");
+        menu=new JMenu("????????");
         menuBar=new JMenuBar();
-        lowLevel=new JMenuItem("初级（10个雷）");
-        midLevel=new JMenuItem("中级（44个雷）");
-        heightLevel=new JMenuItem("高级（99个雷）");
-        restart=new JMenuItem("重新开始");
+        lowLevel=new JMenuItem("??????10?????");
+        midLevel=new JMenuItem("?м???44?????");
+        heightLevel=new JMenuItem("?????99?????");
+        restart=new JMenuItem("??????");
         lowLevel.addActionListener(new ActionListener() {
 
             @Override
@@ -207,7 +207,7 @@ public class MineClient extends JFrame {
         return mineNum;
     }
 
-    //创建地图
+    //???????
     private void initList() {
         for (int i = imgWidth; i < this.getWidth() - 2 * imgWidth; i += imgWidth) {
             for (int j = imgWidth; j < this.getHeight() - 6 * imgWidth; j += imgHeight) {
@@ -225,7 +225,7 @@ public class MineClient extends JFrame {
     }
 
 
-    //自定义panel
+    //?????panel
     public class MyPanel extends JPanel {
         /**
          *
@@ -237,7 +237,7 @@ public class MineClient extends JFrame {
             super.paintComponent(g);
             restMine=mineNum;
             notMine=0;
-            //画地雷 数字
+            //?????? ????
             for (Bomb bomb : bombList) {
                 bomb.draw(g);
                 if(bomb.getWhat()==11) {
@@ -247,30 +247,30 @@ public class MineClient extends JFrame {
                     notMine++;
                 }
             }
-            //游戏失败
+            //??????
             if (gameState.equals("lose")) {
                 for (Bomb bomb : bombList) {
                     if (bomb.getHide() == 9) {
                         bomb.setWhat(bomb.getHide());
                     }
                 }
-                Font font = new Font("微软雅黑", Font.BOLD, 20);
+                Font font = new Font("??????", Font.BOLD, 20);
                 g.setFont(font);
                 g.setColor(new Color(255, 0, 255));
                 g.drawString("GAME OVER!!", this.getWidth() / 2 - 80,
                         this.getHeight() / 2);
             }
-            //画当前游戏进行时间  和未扫的地雷数目
+            //???????????????  ??δ?????????
             drawTimeAndMineNum(g);
 
-            //取得游戏胜利
+            //?????????
             if(!gameState.equals("lose") & restMine+mineNum==colNum*rowNum)
             {
                 gameState="win";
                 Toolkit tk=Toolkit.getDefaultToolkit();
                 Image img=tk.getImage("Image/win.jpg");
                 g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
-                Font font1 = new Font("华文行楷", Font.BOLD, 40);
+                Font font1 = new Font("?????п?", Font.BOLD, 40);
                 g.setFont(font1);
                 g.setColor(new Color(248 ,29 ,56));
                 g.drawString("YOU WIN!!!", this.getWidth()/2-100, 30);
@@ -278,15 +278,15 @@ public class MineClient extends JFrame {
         }
 
         private void drawTimeAndMineNum(Graphics g) {
-            Font font = new Font("微软雅黑", Font.BOLD, 15);
+            Font font = new Font("??????", Font.BOLD, 15);
             g.setFont(font);
             g.setColor(Color.orange);
-            g.drawString("已用时："+time+" 秒", 0, this.getHeight()-20);
-            g.drawString("未扫雷："+restMine+" 个", this.getWidth()-100, this.getHeight()-20);
+            g.drawString("???????"+time+" ??", 0, this.getHeight()-20);
+            g.drawString("δ????"+restMine+" ??", this.getWidth()-100, this.getHeight()-20);
 
         }
     }
-    //屏幕每隔100ms刷新一次
+    //??????100ms??????
     public class updateThread extends Thread {
         @Override
         public void run() {

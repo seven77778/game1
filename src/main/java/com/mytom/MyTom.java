@@ -13,7 +13,7 @@ public class MyTom {
 
 	public static void main(String[] args) throws Exception {
 		
-		JFrame frame = new JFrame("汤姆猫");
+		JFrame frame = new JFrame("myTom");
 		Utils.initFrame(frame, 430, 700);
 		
 		MyTomPanel panel = new MyTomPanel();

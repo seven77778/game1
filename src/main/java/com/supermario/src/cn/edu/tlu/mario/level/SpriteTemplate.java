@@ -1,7 +1,9 @@
 package com.supermario.src.cn.edu.tlu.mario.level;
 
-import cn.edu.tlu.mario.LevelScene;
-import cn.edu.tlu.mario.sprites.*;
+import com.supermario.src.cn.edu.tlu.mario.LevelScene;
+import com.supermario.src.cn.edu.tlu.mario.sprites.Enemy;
+import com.supermario.src.cn.edu.tlu.mario.sprites.FlowerEnemy;
+import com.supermario.src.cn.edu.tlu.mario.sprites.Sprite;
 
 /**
  * 小东西模板 | 花朵、敌人

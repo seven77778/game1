@@ -1,9 +1,10 @@
 package com.supermario.src.cn.edu.tlu.mario;
 
+import com.supermario.src.cn.edu.tlu.sonar.SonarSoundEngine;
+import com.supermario.src.cn.edu.tlu.sonar.SoundListener;
+
 import java.awt.Graphics;
 
-import cn.edu.tlu.sonar.SonarSoundEngine;
-import cn.edu.tlu.sonar.SoundListener;
 
 /**
  * 场景抽象类

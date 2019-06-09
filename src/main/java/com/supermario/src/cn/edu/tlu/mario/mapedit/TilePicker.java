@@ -1,5 +1,7 @@
 package com.supermario.src.cn.edu.tlu.mario.mapedit;
 
+import com.supermario.src.cn.edu.tlu.mario.Art;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -8,9 +10,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.*;
-import cn.edu.tlu.mario.*;
 
-import cn.edu.tlu.mario.Art;
 
 public class TilePicker extends JComponent implements MouseListener, MouseMotionListener {
 	private static final long serialVersionUID = -7696446733303717142L;

@@ -1,5 +1,7 @@
 package com.supermario.src.cn.edu.tlu.mario.mapedit;
 
+import com.supermario.src.cn.edu.tlu.mario.level.Level;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +10,6 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-import cn.edu.tlu.mario.level.*;
 
 public class LevelEditor extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 7461321112832160393L;
@@ -100,17 +101,17 @@ public class LevelEditor extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		try {
-			if (e.getSource() == loadButton) {
-				levelEditView
-						.setLevel(Level.load(new DataInputStream(new FileInputStream(nameField.getText().trim()))));
-			}
-			if (e.getSource() == saveButton) {
-				levelEditView.getLevel().save(new DataOutputStream(new FileOutputStream(nameField.getText().trim())));
-			}
-		} catch (Exception ex) {
-			JOptionPane.showMessageDialog(this, ex.toString(), "Failed to load/save", JOptionPane.ERROR_MESSAGE);
-		}
+//		try {
+//			if (e.getSource() == loadButton) {
+//				levelEditView
+//						.setLevel(Level.load(new DataInputStream(new FileInputStream(nameField.getText().trim()))));
+//			}
+//			if (e.getSource() == saveButton) {
+//				levelEditView.getLevel().save(new DataOutputStream(new FileOutputStream(nameField.getText().trim())));
+//			}
+//		} catch (Exception ex) {
+//			JOptionPane.showMessageDialog(this, ex.toString(), "Failed to load/save", JOptionPane.ERROR_MESSAGE);
+//		}
 	}
 
 	public static void main(String[] args) {

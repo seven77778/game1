@@ -8,8 +8,10 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.*;
-import cn.edu.tlu.mario.*;
-import cn.edu.tlu.mario.level.*;
+
+import com.supermario.src.cn.edu.tlu.mario.Art;
+import com.supermario.src.cn.edu.tlu.mario.LevelRenderer;
+import com.supermario.src.cn.edu.tlu.mario.level.Level;
 
 public class LevelEditView extends JComponent implements MouseListener, MouseMotionListener {
 	private static final long serialVersionUID = -7696446733303717142L;
